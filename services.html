@@ -25,89 +25,39 @@
   <p>End-to-end professional services designed to support business growth.</p>
 </section>
 
-<!-- STAFFING -->
-<section>
+<!-- SERVICES CARDS WITH "Know More" -->
+<section class="services-cards">
+
   <div class="card">
     <h2>👥 Staffing Solutions</h2>
-    <p>
-      RAVS Group provides reliable and scalable staffing solutions to help
-      organizations meet workforce demands efficiently.
-    </p>
-    <ul>
-      <li>Permanent & Contract Staffing</li>
-      <li>Skilled / Semi-skilled / Unskilled Manpower</li>
-      <li>Bulk & Project-based Hiring</li>
-      <li>Payroll & Statutory Compliance Support</li>
-    </ul>
+    <p>RAVS Group provides reliable and scalable staffing solutions...</p>
+    <a href="staffing.html?service=Staffing" class="know-more-btn">Know More</a>
   </div>
-</section>
 
-<!-- IT -->
-<section>
   <div class="card">
     <h2>💻 IT Solutions</h2>
-    <p>
-      Our IT services enable businesses to leverage technology for improved
-      productivity, security, and digital transformation.
-    </p>
-    <ul>
-      <li>Website & Web Application Development</li>
-      <li>IT Infrastructure & Support Services</li>
-      <li>Cloud & Digital Enablement</li>
-      <li>System Integration & Maintenance</li>
-    </ul>
+    <p>Our IT services enable businesses to leverage technology...</p>
+    <a href="it-solutions.html?service=IT" class="know-more-btn">Know More</a>
   </div>
-</section>
 
-<!-- ACCOUNTING -->
-<section>
   <div class="card">
     <h2>📊 Accounting Services</h2>
-    <p>
-      We deliver accurate, compliant, and transparent accounting services
-      to support informed financial decision-making.
-    </p>
-    <ul>
-      <li>Bookkeeping & Financial Statements</li>
-      <li>GST & Statutory Compliance</li>
-      <li>Payroll Accounting</li>
-      <li>MIS & Financial Reporting</li>
-    </ul>
+    <p>We deliver accurate, compliant, and transparent accounting services...</p>
+    <a href="accounting.html?service=Accounting" class="know-more-btn">Know More</a>
   </div>
-</section>
 
-<!-- DIGITAL MARKETING -->
-<section>
   <div class="card">
     <h2>📣 Digital Marketing</h2>
-    <p>
-      Our digital marketing services help brands strengthen their online
-      presence and generate quality business leads.
-    </p>
-    <ul>
-      <li>Social Media Management</li>
-      <li>Search Engine Optimization (SEO)</li>
-      <li>Performance & Paid Marketing</li>
-      <li>Branding & Content Strategy</li>
-    </ul>
+    <p>Our digital marketing services help brands strengthen their online presence...</p>
+    <a href="digital-marketing.html?service=Marketing" class="know-more-btn">Know More</a>
   </div>
-</section>
 
-<!-- L&D -->
-<section>
   <div class="card">
     <h2>🎓 Learning & Development</h2>
-    <p>
-      Our learning and development programs are designed to enhance skills,
-      leadership capabilities, and workforce productivity.
-    </p>
-    <ul>
-      <li>Corporate Training Programs</li>
-      <li>Soft Skills & Behavioral Training</li>
-      <li>Leadership & Managerial Development</li>
-      <li>Process Improvement Workshops</li>
-    </ul>
+    <p>Our learning and development programs are designed to enhance skills...</p>
+    <a href="learning-development.html?service=LD" class="know-more-btn">Know More</a>
   </div>
+
 </section>
 
 <!-- CONTACT FORM -->
@@ -119,16 +69,16 @@
     <input name="email" placeholder="Email*" required>
     <input name="phone" placeholder="Phone">
 
-    <select name="service">
-      <option>Staffing Solutions</option>
-      <option>IT Solutions</option>
-      <option>Accounting Services</option>
-      <option>Digital Marketing</option>
-      <option>Learning & Development</option>
+    <select name="service" id="serviceDropdown" required>
+      <option value="" selected disabled>Select Service</option>
+      <option value="Staffing">Staffing Solutions</option>
+      <option value="IT">IT Solutions</option>
+      <option value="Accounting">Accounting Services</option>
+      <option value="Marketing">Digital Marketing</option>
+      <option value="LD">Learning & Development</option>
     </select>
 
     <textarea name="message" placeholder="Message*" required></textarea>
-
     <button type="submit">Submit</button>
     <p id="formMsg"></p>
   </form>
@@ -144,11 +94,11 @@
 
     <div>
       <h4>Services</h4>
-      <a href="services.html">Staffing Solutions</a><br>
-      <a href="services.html">IT Solutions</a><br>
-      <a href="services.html">Accounting Services</a><br>
-      <a href="services.html">Digital Marketing</a><br>
-      <a href="services.html">Learning & Development</a>
+      <a href="staffing.html">Staffing Solutions</a><br>
+      <a href="it-solutions.html">IT Solutions</a><br>
+      <a href="accounting.html">Accounting Services</a><br>
+      <a href="digital-marketing.html">Digital Marketing</a><br>
+      <a href="learning-development.html">Learning & Development</a>
     </div>
 
     <div>
@@ -163,7 +113,7 @@
   </div>
 </footer>
 
-<!-- FLOATING ICONS (SAME AS HOME) -->
+<!-- FLOATING ICONS -->
 <div class="float-btns">
   <a href="https://api.whatsapp.com/send?phone=918126757595" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
@@ -174,5 +124,27 @@
 </div>
 
 <script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  // 1️⃣ Auto-select service on landing page if URL has parameter
+  const params = new URLSearchParams(window.location.search);
+  const serviceParam = params.get("service");
+  const dropdown = document.querySelector("#serviceDropdown");
+  if(serviceParam && dropdown){
+    dropdown.value = serviceParam;
+  }
+
+  // 2️⃣ Ensure mandatory selection on submit
+  document.querySelector("#contactForm").addEventListener("submit", function(e){
+    if(!dropdown.value){
+      e.preventDefault();
+      alert("Please select a service before submitting!");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
