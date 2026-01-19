@@ -15,25 +15,20 @@ form.addEventListener("submit", function (e) {
 
   fetch("https://script.google.com/macros/s/AKfycby2HHqO-Ih4rLJe9ZhHK5RCQI-QJiB4wsCYOL_c0yWYWoSnUGkHSnmsJgkyGsYC24RHyQ/exec", {
     method: "POST",
-    redirect: "follow",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
-    .then(result => {
-      if (result.status === "success") {
-        msg.innerText = "Thank you for contacting us. We will connect you shortly.";
-        form.reset();
-      } else {
-        msg.innerText = "Something went wrong. Please try again.";
-      }
-
+    .then(() => {
+      msg.innerText =
+        "Thank you for contacting us. We will connect you shortly.";
+      form.reset();
       setTimeout(() => (msg.innerText = ""), 5000);
     })
     .catch(() => {
-      msg.innerText = "Something went wrong. Please try again.";
+      msg.innerText =
+        "Something went wrong. Please try again.";
       setTimeout(() => (msg.innerText = ""), 5000);
     });
 });
