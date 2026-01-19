@@ -1,37 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accounting Services | RAVS Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav>
+  <div><strong style="color:white;">RAVS Group</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="#contact">Get in Touch</a>
+  </div>
+</nav>
+
 <section class="hero">
-<h1>Accounting Services</h1>
-<p>Accurate. Compliant. Reliable.</p>
+  <h1>Accounting Services</h1>
+  <p>Accurate, compliant, and transparent accounting for your business.</p>
 </section>
 
 <section>
-<div class="cards">
-<div class="card">
-<h3>Bookkeeping</h3>
-<ul>
-<li>Daily Accounting</li>
-<li>Ledger Management</li>
-<li>Bank Reconciliation</li>
-</ul>
-</div>
+  <div class="card">
+    <h2>📊 Our Expertise</h2>
+    <p>
+      RAVS Group delivers financial and accounting services to support informed decision-making.
+    </p>
+    <ul>
+      <li>Bookkeeping & Financial Statements</li>
+      <li>GST & Statutory Compliance</li>
+      <li>Payroll Accounting</li>
+      <li>MIS & Financial Reporting</li>
+    </ul>
+  </div>
+</section>
 
-<div class="card">
-<h3>Tax & Compliance</h3>
-<ul>
-<li>GST Filing</li>
-<li>TDS Returns</li>
-<li>Statutory Compliance</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Payroll Accounting</h3>
-<ul>
-<li>Salary Processing</li>
-<li>Compliance Reports</li>
-<li>MIS Reports</li>
-</ul>
-</div>
-</div>
+<section id="contact">
+  <h2 class="section-title center-text">Get in Touch</h2>
+  <form id="contactForm" class="center-form">
+    <input name="name" placeholder="Name*" required>
+    <input name="email" placeholder="Email*" required>
+    <input name="phone" placeholder="Phone">
+    <select name="service">
+      <option value="Staffing">Staffing Solutions</option>
+      <option value="IT">IT Solutions</option>
+      <option value="Accounting">Accounting Services</option>
+      <option value="Marketing">Digital Marketing</option>
+      <option value="LD">Learning & Development</option>
+    </select>
+    <textarea name="message" placeholder="Message*" required></textarea>
+    <button type="submit">Submit</button>
+    <p id="formMsg"></p>
+  </form>
 </section>
 
 <footer>
