@@ -57,13 +57,17 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
+.hero h1 span {
+  color: #ffd700;
+}
+
 .hero p {
   font-size: 18px;
   opacity: 0.95;
 }
 
 /* =========================
-   SVG WAVE DIVIDER
+   SVG WAVES
 ========================= */
 .wave svg {
   display: block;
@@ -75,7 +79,7 @@ nav a:hover {
    SECTIONS
 ========================= */
 section {
-  padding: 70px 60px;
+  padding: 80px 60px;
 }
 
 .section-title {
@@ -87,91 +91,107 @@ section {
 
 .section-subtitle {
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   text-align: center;
 }
 
 /* =========================
-   CARDS (GLOBAL – CENTER ALIGNED)
+   COMMON GRID
+   (HOME + SERVICES + SERVICE PAGES)
 ========================= */
 .cards,
-.services-cards {
+.service-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(5, 1fr); /* Desktop: 5 in one row */
+  gap: 25px;
   justify-items: center;   /* 👈 CARD CENTER ALIGN */
 }
 
-.card {
+/* =========================
+   CARD (UNIVERSAL)
+========================= */
+.card,
+.service-card {
   background: #ffffff;
   padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   transition: 0.35s;
-  text-align: center;      /* 👈 TEXT CENTER */
-  width: 100%;
-  max-width: 360px;        /* 👈 UNIFORM WIDTH */
   display: flex;
   flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
 }
 
-.card:hover {
+.card:hover,
+.service-card:hover {
   transform: translateY(-8px);
 }
 
 .card h2,
 .card h3,
-.card h4 {
+.card h4,
+.service-card h2 {
   margin-bottom: 12px;
   color: #0b2a5b;
 }
 
-.card p {
+.card p,
+.service-card p {
   font-size: 15px;
   color: #444;
-  margin-bottom: 10px;
 }
 
-.card ul {
+.card ul,
+.service-card ul {
+  margin-top: 12px;
   padding-left: 0;
   list-style: none;
-  margin-top: 10px;
 }
 
-.card ul li {
+.card ul li,
+.service-card ul li {
   margin-bottom: 8px;
   font-size: 14px;
 }
 
 /* =========================
-   KNOW MORE BUTTON (BOTTOM FIX)
+   SERVICE DETAIL PAGE ENHANCEMENT
 ========================= */
-.know-more-btn,
-.card a {
-  margin-top: auto;              /* 👈 ALWAYS BOTTOM */
+.service-detail .service-card {
+  background: linear-gradient(180deg, #ffffff, #f0f4ff);
+  border-top: 5px solid #0b2a5b;
+}
+
+/* =========================
+   MISSION / VISION HIGHLIGHT
+========================= */
+.card-highlight {
+  border-left: 5px solid #ffd700;
+  padding-left: 20px;
+}
+
+/* =========================
+   SERVICE BUTTON (ALWAYS BOTTOM)
+========================= */
+.service-btn,
+.know-more-btn {
+  margin-top: auto;                 /* 👈 KEY FIX */
   align-self: center;
   padding: 12px 22px;
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #fff;
   border-radius: 25px;
+  background: linear-gradient(135deg, #0b2a5b, #123f8a);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
 }
 
-.know-more-btn:hover,
-.card a:hover {
+.service-btn:hover,
+.know-more-btn:hover {
   background: linear-gradient(135deg, #123f8a, #0b2a5b);
   transform: scale(1.05);
-}
-
-/* =========================
-   SERVICE DETAIL PAGES – ENHANCED LOOK
-========================= */
-.service-detail .card {
-  max-width: 420px;
-  background: linear-gradient(180deg, #ffffff, #f0f4ff);
-  border-top: 5px solid #0b2a5b;
 }
 
 /* =========================
@@ -184,15 +204,16 @@ section {
 
 .testimonials .card h4 {
   margin-bottom: 6px;
+  color: #0b2a5b;
   font-style: normal;
 }
 
 /* =========================
-   CONTACT FORM (NO CHANGE)
+   CONTACT FORM (UNTOUCHED)
 ========================= */
 form {
   max-width: 600px;
-  margin: 30px auto 0;
+  margin-top: 30px;
 }
 
 form input,
@@ -206,6 +227,10 @@ form textarea {
   font-size: 14px;
 }
 
+form textarea {
+  min-height: 110px;
+}
+
 form button {
   background: #0b2a5b;
   color: #ffffff;
@@ -216,9 +241,14 @@ form button {
   cursor: pointer;
 }
 
+form button:hover {
+  background: #123f8a;
+}
+
 #formMsg {
   margin-top: 12px;
   font-size: 14px;
+  color: green;
 }
 
 /* =========================
@@ -240,12 +270,12 @@ footer {
   margin-bottom: 12px;
 }
 
-.footer-grid a,
-.footer-grid p {
-  color: #ffffff;
+.footer-grid p,
+.footer-grid a {
   font-size: 14px;
-  line-height: 1.8;
+  color: #ffffff;
   text-decoration: none;
+  line-height: 1.8;
 }
 
 .footer-bottom {
@@ -268,15 +298,28 @@ footer {
 .float-btns img {
   width: 46px;
   margin-top: 10px;
+  transition: 0.3s;
+}
+
+.float-btns img:hover {
+  transform: scale(1.1);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 1200px) {
+  .cards,
+  .service-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 14px 25px;
     flex-direction: column;
+    gap: 10px;
   }
 
   section {
@@ -284,10 +327,23 @@ footer {
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
-  .footer-grid {
+  .cards,
+  .service-cards {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================
+   HELPERS
+========================= */
+.center-text {
+  text-align: center;
+}
+
+.center-form {
+  margin-left: auto;
+  margin-right: auto;
 }
