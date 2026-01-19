@@ -1,44 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IT Solutions | RAVS Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav>
+  <div><strong style="color:white;">RAVS Group</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="#contact">Get in Touch</a>
+  </div>
+</nav>
+
 <section class="hero">
-<h1>IT Solutions</h1>
-<p>Technology that empowers business growth</p>
+  <h1>IT Solutions</h1>
+  <p>Technology solutions to enhance business efficiency and security.</p>
 </section>
 
 <section>
-<div class="cards">
-<div class="card">
-<h3>Web & App Development</h3>
-<ul>
-<li>Corporate Websites</li>
-<li>Web Applications</li>
-<li>Mobile-friendly UI</li>
-<li>Maintenance & Support</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>IT Infrastructure</h3>
-<ul>
-<li>Network Setup</li>
-<li>Server Management</li>
-<li>Cloud Services</li>
-<li>Cyber Security</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Digital Transformation</h3>
-<ul>
-<li>Automation</li>
-<li>ERP Integration</li>
-<li>System Optimization</li>
-<li>Data Security</li>
-</ul>
-</div>
-</div>
+  <div class="card">
+    <h2>💻 Our Expertise</h2>
+    <p>
+      RAVS Group provides IT services to help businesses leverage technology for growth and security.
+    </p>
+    <ul>
+      <li>Website & Web Application Development</li>
+      <li>IT Infrastructure & Support Services</li>
+      <li>Cloud & Digital Enablement</li>
+      <li>System Integration & Maintenance</li>
+    </ul>
+  </div>
 </section>
 
-<section class="center-text">
-<a href="index.html#contact" class="know-more-btn">Talk to IT Consultant</a>
+<section id="contact">
+  <h2 class="section-title center-text">Get in Touch</h2>
+  <form id="contactForm" class="center-form">
+    <input name="name" placeholder="Name*" required>
+    <input name="email" placeholder="Email*" required>
+    <input name="phone" placeholder="Phone">
+    <select name="service">
+      <option value="Staffing">Staffing Solutions</option>
+      <option value="IT">IT Solutions</option>
+      <option value="Accounting">Accounting Services</option>
+      <option value="Marketing">Digital Marketing</option>
+      <option value="LD">Learning & Development</option>
+    </select>
+    <textarea name="message" placeholder="Message*" required></textarea>
+    <button type="submit">Submit</button>
+    <p id="formMsg"></p>
+  </form>
 </section>
 
 <footer>
@@ -79,7 +94,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const serviceDropdown = document.querySelector("select[name='service']");
-  if (serviceDropdown) serviceDropdown.value = "Accounting";
+  if (serviceDropdown) serviceDropdown.value = "IT";
 });
 </script>
 
