@@ -4,189 +4,7 @@
   <meta charset="UTF-8">
   <title>Services | RAVS Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* ===== GLOBAL ===== */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f7f9fb;
-      margin: 0;
-      color: #0b3c5d;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #0b3c5d;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to right, #0b3c5d, #062a40);
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* ===== SERVICES CARDS ===== */
-    .services-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
-    }
-
-    .card ul {
-      padding-left: 1.2rem;
-    }
-
-    .know-more-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 16px;
-      background: linear-gradient(to right, #0b3c5d, #062a40);
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .know-more-btn:hover {
-      background: linear-gradient(to right, #062a40, #0b3c5d);
-      transform: translateY(-2px);
-    }
-
-    /* ===== CONTACT FORM ===== */
-    #contact {
-      padding: 3rem 2rem;
-      background-color: #e8f0fb;
-    }
-
-    .center-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .center-form input, .center-form textarea, .center-form select {
-      padding: 0.8rem 1rem;
-      border-radius: 6px;
-      border: 1px solid #c1c1c1;
-      font-size: 1rem;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .center-form button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      background: linear-gradient(to right, #0b3c5d, #062a40);
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .center-form button:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(to right, #062a40, #0b3c5d);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0b3c5d;
-      color: white;
-      padding: 3rem 2rem 1rem;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-grid div h4 {
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #c1c1c1;
-    }
-
-    /* ===== FLOATING ICONS ===== */
-    .float-btns {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .float-btns img {
-      width: 48px;
-      height: 48px;
-    }
-
-    /* ===== SECTION TITLES ===== */
-    .section-title {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  </style>
 </head>
 <body>
 
@@ -202,83 +20,105 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Our Services</h1>
+<section class="hero service-hero">
+  <h1>Our <span>Services</span></h1>
   <p>End-to-end professional services designed to support business growth.</p>
 </section>
 
-<!-- SERVICES CARDS -->
-<section class="services-cards">
-  <div class="card">
-    <h2>👥 Staffing Solutions</h2>
-    <p>RAVS Group provides reliable and scalable staffing solutions to help organizations meet workforce demands efficiently.</p>
-    <ul>
-      <li>Permanent & Contract Staffing</li>
-      <li>Skilled / Semi-skilled / Unskilled Manpower</li>
-      <li>Bulk & Project-based Hiring</li>
-      <li>Payroll & Statutory Compliance Support</li>
-    </ul>
-    <a href="staffing.html?service=Staffing" class="know-more-btn">Know More</a>
-  </div>
+<!-- SVG WAVE -->
+<div class="wave">
+<svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <path fill="#f5f7fb" d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,85.3C672,96,768,96,864,90.7C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/>
+</svg>
+</div>
 
-  <div class="card">
-    <h2>💻 IT Solutions</h2>
-    <p>Our IT services enable businesses to leverage technology for improved productivity, security, and digital transformation.</p>
-    <ul>
-      <li>Website & Web Application Development</li>
-      <li>IT Infrastructure & Support Services</li>
-      <li>Cloud & Digital Enablement</li>
-      <li>System Integration & Maintenance</li>
-    </ul>
-    <a href="it-solutions.html?service=IT" class="know-more-btn">Know More</a>
-  </div>
+<!-- SERVICES -->
+<section class="services-section">
+  <h2 class="section-title center-text">What We Offer</h2>
+  <p class="section-subtitle center-text">
+    Comprehensive solutions tailored to your business needs
+  </p>
 
-  <div class="card">
-    <h2>📊 Accounting Services</h2>
-    <p>We deliver accurate, compliant, and transparent accounting services to support informed financial decision-making.</p>
-    <ul>
-      <li>Bookkeeping & Financial Statements</li>
-      <li>GST & Statutory Compliance</li>
-      <li>Payroll Accounting</li>
-      <li>MIS & Financial Reporting</li>
-    </ul>
-    <a href="accounting.html?service=Accounting" class="know-more-btn">Know More</a>
-  </div>
+  <div class="service-cards">
 
-  <div class="card">
-    <h2>📣 Digital Marketing</h2>
-    <p>Our digital marketing services help brands strengthen their online presence and generate quality business leads.</p>
-    <ul>
-      <li>Social Media Management</li>
-      <li>Search Engine Optimization (SEO)</li>
-      <li>Performance & Paid Marketing</li>
-      <li>Branding & Content Strategy</li>
-    </ul>
-    <a href="digital-marketing.html?service=Marketing" class="know-more-btn">Know More</a>
-  </div>
+    <div class="service-card">
+      <div class="icon">👥</div>
+      <h3>Staffing Solutions</h3>
+      <p>Scalable manpower solutions to meet dynamic workforce requirements.</p>
+      <ul>
+        <li>Permanent & Contract Staffing</li>
+        <li>Skilled / Semi-skilled Manpower</li>
+        <li>Bulk & Project Hiring</li>
+        <li>Payroll Compliance</li>
+      </ul>
+      <a href="staffing.html?service=Staffing" class="service-btn">Know More</a>
+    </div>
 
-  <div class="card">
-    <h2>🎓 Learning & Development</h2>
-    <p>Our learning and development programs are designed to enhance skills, leadership capabilities, and workforce productivity.</p>
-    <ul>
-      <li>Corporate Training Programs</li>
-      <li>Soft Skills & Behavioral Training</li>
-      <li>Leadership & Managerial Development</li>
-      <li>Process Improvement Workshops</li>
-    </ul>
-    <a href="learning-development.html?service=LD" class="know-more-btn">Know More</a>
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3>IT Solutions</h3>
+      <p>Technology-driven solutions for digital growth and security.</p>
+      <ul>
+        <li>Website & App Development</li>
+        <li>IT Infrastructure Support</li>
+        <li>Cloud Enablement</li>
+        <li>System Maintenance</li>
+      </ul>
+      <a href="it-solutions.html?service=IT" class="service-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">📊</div>
+      <h3>Accounting Services</h3>
+      <p>Accurate and compliant financial management services.</p>
+      <ul>
+        <li>Bookkeeping & MIS</li>
+        <li>GST & Statutory Filing</li>
+        <li>Payroll Accounting</li>
+        <li>Financial Reporting</li>
+      </ul>
+      <a href="accounting.html?service=Accounting" class="service-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">📣</div>
+      <h3>Digital Marketing</h3>
+      <p>Boost your brand visibility and lead generation online.</p>
+      <ul>
+        <li>SEO & Social Media</li>
+        <li>Paid Advertising</li>
+        <li>Content Strategy</li>
+        <li>Brand Campaigns</li>
+      </ul>
+      <a href="digital-marketing.html?service=Marketing" class="service-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎓</div>
+      <h3>Learning & Development</h3>
+      <p>Upskilling programs for workforce excellence.</p>
+      <ul>
+        <li>Corporate Training</li>
+        <li>Soft Skills Development</li>
+        <li>Leadership Programs</li>
+        <li>Process Workshops</li>
+      </ul>
+      <a href="learning-development.html?service=LD" class="service-btn">Know More</a>
+    </div>
+
   </div>
 </section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title">Get in Touch</h2>
+  <h2 class="section-title center-text">Get in Touch</h2>
+
   <form id="contactForm" class="center-form">
     <input name="name" placeholder="Name*" required>
-    <input name="email" placeholder="Email*" required>
-    <input name="phone" placeholder="Phone">
+    <input name="email" type="email" placeholder="Email*" required>
+    <input name="phone" type="tel" placeholder="Phone Number*" required>
     <select name="service" id="serviceDropdown" required>
-      <option value="" selected disabled>Select Service</option>
+      <option value="" disabled selected>Select Service</option>
       <option value="Staffing">Staffing Solutions</option>
       <option value="IT">IT Solutions</option>
       <option value="Accounting">Accounting Services</option>
@@ -315,7 +155,7 @@
   <div class="footer-bottom">© RAVS Group. All rights reserved.</div>
 </footer>
 
-<!-- FLOATING ICONS -->
+<!-- FLOATING BUTTONS -->
 <div class="float-btns">
   <a href="https://api.whatsapp.com/send?phone=918126757595" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
@@ -326,21 +166,21 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-  // Auto-select dropdown if URL parameter
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+  const dropdown = document.getElementById("serviceDropdown");
+  const msg = document.getElementById("formMsg");
+
+  // Auto select service from URL
   const params = new URLSearchParams(window.location.search);
   const serviceParam = params.get("service");
-  const dropdown = document.querySelector("#serviceDropdown");
-  if(serviceParam && dropdown){
-    dropdown.value = serviceParam;
-  }
+  if (serviceParam) dropdown.value = serviceParam;
 
-  // Mandatory selection check
-  document.querySelector("#contactForm").addEventListener("submit", function(e){
-    if(!dropdown.value){
-      e.preventDefault();
-      alert("Please select a service before submitting!");
-    }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // FIX jump issue
+    msg.innerText = "Thank you! We will contact you shortly.";
+    form.reset();
   });
 });
 </script>
