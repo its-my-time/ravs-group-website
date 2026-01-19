@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Staffing Solutions | RAVS Group</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR (same as index.html) -->
+<header class="navbar">
+  <div class="logo">RAVS Group</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="#contact">Get in Touch</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="service-hero">
+  <h1>Staffing Solutions</h1>
+  <p>Reliable workforce solutions tailored to your business needs.</p>
+</section>
+
+<!-- SERVICE CONTENT -->
+<section class="service-detail">
+  <h2>Our Staffing Expertise</h2>
+  <p>
+    RAVS Group provides end-to-end staffing solutions to help organizations
+    scale efficiently with the right talent.
+  </p>
+
+  <ul>
+    <li>Permanent & Contract Staffing</li>
+    <li>Bulk & Lateral Hiring</li>
+    <li>Payroll & Compliance Management</li>
+    <li>Industry-specific Talent Solutions</li>
+  </ul>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="contact-section">
+  <h2>Get in Touch</h2>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="tel" name="phone" placeholder="Phone" />
+
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option value="Staffing">Staffing Solutions</option>
+      <option value="IT">IT Solutions</option>
+      <option value="Accounting">Accounting Services</option>
+      <option value="Marketing">Digital Marketing</option>
+      <option value="LD">Learning & Development</option>
+    </select>
+
+    <textarea name="message" placeholder="Message" required></textarea>
+
+    <button type="submit">Submit</button>
+    <p id="formMsg"></p>
+  </form>
+</section>
+
+<!-- FLOATING ICONS -->
+<div class="floating-icons">
+  <a href="https://api.whatsapp.com/send?phone=918126757595" target="_blank">
+    <img src="whatsapp-icon.png" />
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61555963289834" target="_blank">
+    <img src="facebook-icon.png" />
+  </a>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  // auto select service
+  document.querySelector("select[name='service']").value = "Staffing";
+</script>
+
+</body>
+</html>
