@@ -243,19 +243,24 @@ section {
   margin-bottom: 6px;
 }
 
-.service-btn {
+.service-btn,
+.know-more-btn {
+  margin-top: auto; /* MAGIC LINE */
   display: inline-block;
-  padding: 10px 26px;
-  background: #0b2a5b;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0b2a5b, #123f8a);
   color: #ffffff;
-  border-radius: 30px;
-  font-size: 14px;
   text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
+  align-self: flex-start;
 }
 
-.service-btn:hover {
-  background: #123f8a;
+.service-btn:hover,
+.know-more-btn:hover {
+  background: linear-gradient(135deg, #123f8a, #0b2a5b);
+  transform: translateY(-2px);
 }
 
 /* =========================
