@@ -1,6 +1,6 @@
-/* =====================================================
+/* =========================
    GLOBAL RESET
-===================================================== */
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +9,14 @@
 }
 
 body {
-  background: #f5f7fb;
+  background-color: #f5f7fb;
   color: #1f2933;
   line-height: 1.6;
 }
 
-/* =====================================================
+/* =========================
    NAVBAR
-===================================================== */
+========================= */
 nav {
   position: sticky;
   top: 0;
@@ -29,29 +29,36 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: #9dc3ff;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
   background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 44px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #ffd700;
 }
 
 .hero p {
@@ -59,180 +66,315 @@ nav a:hover {
   opacity: 0.95;
 }
 
-/* =====================================================
-   SECTION
-===================================================== */
+.hero button {
+  margin-top: 25px;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: none;
+  background: #ffffff;
+  color: #0b2a5b;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #e6ecff;
+}
+
+/* =========================
+   SVG WAVES
+========================= */
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 section {
-  padding: 80px 60px;
+  padding: 70px 60px;
+  position: relative;
 }
 
 .section-title {
   font-size: 32px;
-  color: #0b2a5b;
-  text-align: center;
   margin-bottom: 12px;
+  color: #0b2a5b;
 }
 
 .section-subtitle {
-  text-align: center;
   color: #555;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
-/* =====================================================
-   COMMON GRID (HOME + SERVICES)
-===================================================== */
-.cards,
+/* =========================
+   COMMON CARDS
+========================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h2,
+.card h3,
+.card h4 {
+  margin-bottom: 10px;
+  color: #0b2a5b;
+}
+
+.card p {
+  color: #444;
+  font-size: 15px;
+}
+
+.card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+/* Mission & Vision Highlight */
+.card-highlight {
+  border-left: 5px solid #ffd700;
+  padding-left: 20px;
+}
+
+/* =========================
+   SERVICES – HOME PAGE
+========================= */
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0b2a5b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   SERVICES PAGE – PREMIUM
+========================= */
+.service-hero {
+  padding-bottom: 0;
+}
+
+.services-section {
+  background: #f5f7fb;
+}
+
 .service-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 25px;
-  justify-items: center;
 }
 
-/* =====================================================
-   CARD (GLOBAL)
-===================================================== */
-.card,
 .service-card {
-  background: #fff;
-  padding: 30px;
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-  transition: 0.3s;
-  display: flex;
-  flex-direction: column;
+  padding: 30px;
   text-align: center;
-  width: 100%;
-  max-width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
 }
 
-.card:hover,
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0b2a5b, #123f8a);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.service-card:hover::before {
+  opacity: 0.08;
+}
+
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
 
-.card h3,
+.service-card .icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
 .service-card h3 {
+  margin-bottom: 12px;
   color: #0b2a5b;
-  margin-bottom: 10px;
 }
 
-.card p,
 .service-card p {
   font-size: 14px;
-  color: #555;
+  margin-bottom: 15px;
 }
 
-/* Button fixed at bottom */
-.card a,
-.service-card a {
-  margin-top: auto;
-  align-self: center;
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 22px;
-  font-weight: 600;
+.service-card ul {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.service-card ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.service-btn {
+  display: inline-block;
+  padding: 10px 26px;
+  background: #0b2a5b;
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 14px;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.card a:hover,
-.service-card a:hover {
-  transform: translateY(-2px);
+.service-btn:hover {
+  background: #123f8a;
 }
 
-/* =====================================================
-   INDIVIDUAL SERVICE PAGES
-===================================================== */
-.service-page {
-  background: #f5f7fb;
+/* =========================
+   TESTIMONIALS
+========================= */
+.testimonials .card {
+  background: #eef3ff;
+  font-style: italic;
 }
 
-.service-intro {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.service-intro h1 {
-  font-size: 38px;
+.testimonials h4 {
+  margin-top: 10px;
   color: #0b2a5b;
 }
 
-.service-features {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  justify-items: center;
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+  max-width: 600px;
+  margin-top: 30px;
 }
 
-.service-feature-card {
-  background: #fff;
-  padding: 35px 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: center;
-  max-width: 340px;
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-.service-feature-card h3 {
-  color: #0b2a5b;
-  margin-bottom: 10px;
+form textarea {
+  min-height: 110px;
 }
 
-.service-benefits {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+form button {
+  background: #0b2a5b;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.service-benefits div {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 16px;
-  border-left: 6px solid #0b2a5b;
+form button:hover {
+  background: #123f8a;
 }
 
-.service-cta {
-  margin-top: 80px;
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #fff;
-  text-align: center;
-  padding: 60px 30px;
-  border-radius: 20px;
+#formMsg {
+  margin-top: 12px;
+  font-size: 14px;
+  color: green;
 }
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 footer {
   background: #0b2a5b;
-  color: #fff;
+  color: #ffffff;
   padding: 45px 60px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
+}
+
+.footer-grid h4 {
+  margin-bottom: 12px;
+}
+
+.footer-grid p,
+.footer-grid a {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
 }
 
 .footer-bottom {
   margin-top: 30px;
   text-align: center;
   font-size: 13px;
-  opacity: 0.9;
 }
 
-/* =====================================================
+/* =========================
+   FLOATING BUTTONS
+========================= */
+.float-btns {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+.float-btns a img {
+  width: 46px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.float-btns a img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
    RESPONSIVE
-===================================================== */
+========================= */
 @media (max-width: 1200px) {
-  .cards,
   .service-cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -240,6 +382,7 @@ footer {
 
 @media (max-width: 768px) {
   nav {
+    padding: 14px 25px;
     flex-direction: column;
   }
 
@@ -247,10 +390,24 @@ footer {
     padding: 60px 25px;
   }
 
+  .hero h1 {
+    font-size: 34px;
+  }
+
   .cards,
-  .service-cards,
-  .service-features,
-  .service-benefits {
+  .service-cards {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================
+   CENTER ALIGN
+========================= */
+.center-text {
+  text-align: center;
+}
+
+.center-form {
+  margin-left: auto;
+  margin-right: auto;
 }
