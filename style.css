@@ -1,6 +1,16 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+/* ==================================================
+   GLOBAL RESET & VARIABLES
+================================================== */
+:root {
+  --primary: #0b2a5b;
+  --secondary: #123f8a;
+  --light: #f5f7fb;
+  --white: #ffffff;
+  --text-dark: #1f2933;
+  --text-muted: #555;
+  --radius: 14px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,51 +18,68 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body {
-  background-color: #f5f7fb;
-  color: #1f2933;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
 }
 
-/* =========================
+body {
+  background: var(--light);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ==================================================
    NAVBAR
-========================= */
+================================================== */
 nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: #0b2a5b;
-  padding: 14px 50px;
+  z-index: 999;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 14px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav a {
-  color: #ffffff;
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav-links a {
+  color: var(--white);
   text-decoration: none;
-  margin-left: 25px;
+  margin-left: 28px;
   font-weight: 500;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #9dc3ff;
+.nav-links a:hover {
+  color: #c7d9ff;
 }
 
-/* =========================
+/* ==================================================
    HERO SECTION
-========================= */
+================================================== */
 .hero {
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #ffffff;
+  position: relative;
+  background: linear-gradient(135deg, #0b2a5b, #154aa3);
+  color: var(--white);
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px 180px;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: #ffd166;
 }
 
 .hero p {
@@ -61,14 +88,15 @@ nav a:hover {
 }
 
 .hero button {
-  margin-top: 25px;
-  padding: 14px 34px;
+  margin-top: 30px;
+  padding: 14px 38px;
   border-radius: 30px;
   border: none;
-  background: #ffffff;
-  color: #0b2a5b;
+  background: var(--white);
+  color: var(--primary);
   font-size: 16px;
   cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
@@ -76,223 +104,228 @@ nav a:hover {
   background: #e6ecff;
 }
 
-/* =========================
+/* SVG Wave */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wave svg {
+  width: 100%;
+  height: auto;
+}
+
+.wave path {
+  fill: var(--light);
+}
+
+/* ==================================================
    SECTIONS
-========================= */
+================================================== */
 section {
-  padding: 70px 60px;
+  padding: 80px 70px;
+}
+
+.alt-bg {
+  background: #eef2fb;
 }
 
 .section-title {
-  font-size: 32px;
-  margin-bottom: 12px;
-  color: #0b2a5b;
+  font-size: 34px;
+  color: var(--primary);
+  margin-bottom: 50px;
 }
 
 .section-subtitle {
-  color: #555;
-  margin-bottom: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: -35px;
+  margin-bottom: 45px;
 }
 
-/* =========================
+/* ==================================================
    CARDS (COMMON)
-========================= */
+================================================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 28px;
 }
 
 .card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  background: var(--white);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  transition: 0.35s;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
 }
 
+.card h2,
 .card h3,
-.card h4,
-.card h2 {
-  margin-bottom: 10px;
-  color: #0b2a5b;
+.card h4 {
+  margin-bottom: 12px;
+  color: var(--primary);
 }
 
 .card p {
-  color: #444;
   font-size: 15px;
+  color: var(--text-muted);
 }
 
-.card ul {
-  margin-top: 12px;
-  padding-left: 18px;
-}
-
-.card ul li {
-  margin-bottom: 8px;
-}
-
-/* =========================
-   SERVICES CARD LINK
-========================= */
-.card a {
+/* ==================================================
+   SERVICE CARDS
+================================================== */
+.service-card a {
   display: inline-block;
-  margin-top: 12px;
-  color: #0b2a5b;
+  margin-top: 14px;
+  color: var(--primary);
   font-weight: 600;
   text-decoration: none;
 }
 
-.card a:hover {
+.service-card a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   TEAM ICON PLACEHOLDER
-========================= */
-.card::before {
-  content: "";
-  display: block;
-  width: 55px;
-  height: 55px;
-  background: #e6ecff;
-  border-radius: 50%;
-  margin-bottom: 15px;
+/* ==================================================
+   TESTIMONIALS
+================================================== */
+.testimonials .card {
+  text-align: center;
 }
 
-/* =========================
+.testimonials p {
+  font-style: italic;
+  margin: 15px 0;
+}
+
+.testimonials strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+/* ==================================================
    CONTACT FORM
-========================= */
-form {
-  max-width: 600px;
-  margin-top: 30px;
+================================================== */
+.center-form {
+  max-width: 620px;
+  margin: auto;
 }
 
 form input,
 form select,
 form textarea {
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
 
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 form textarea {
-  min-height: 110px;
+  min-height: 120px;
   resize: vertical;
 }
 
 form button {
-  background: #0b2a5b;
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
   border: none;
-  padding: 12px 30px;
-  border-radius: 6px;
-  font-size: 15px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 form button:hover {
-  background: #123f8a;
-}
-
-#formMsg {
-  margin-top: 12px;
-  font-size: 14px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #0b2a5b;
-  color: #ffffff;
-  padding: 45px 60px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
-
-.footer-grid h4 {
-  margin-bottom: 12px;
-}
-
-.footer-grid p,
-.footer-grid a {
-  font-size: 14px;
-  color: #ffffff;
-  text-decoration: none;
-  line-height: 1.8;
-}
-
-.footer-grid a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 13px;
   opacity: 0.9;
 }
 
-/* =========================
-   FLOATING ACTION BUTTONS
-========================= */
+#formMsg {
+  margin-top: 14px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 14px;
+}
+
+/* ==================================================
+   FLOATING BUTTONS
+================================================== */
 .float-btns {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 22px;
+  bottom: 22px;
   z-index: 999;
 }
 
-.float-btns a img {
+.float-btns img {
   width: 46px;
   margin-top: 10px;
   transition: 0.3s;
 }
 
-.float-btns a img:hover {
+.float-btns img:hover {
   transform: scale(1.1);
 }
 
-/* =========================
+/* ==================================================
+   UTILITIES
+================================================== */
+.center-text {
+  text-align: center;
+}
+
+/* ==================================================
    RESPONSIVE
-========================= */
-@media (max-width: 768px) {
+================================================== */
+@media (max-width: 900px) {
   nav {
-    padding: 14px 25px;
+    padding: 14px 30px;
     flex-direction: column;
     gap: 10px;
   }
 
   section {
-    padding: 60px 25px;
+    padding: 70px 30px;
   }
 
   .hero h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
 }
 
-/* =========================
-   CENTER ALIGN FIX
-========================= */
-.center-text {
-  text-align: center;
-}
-
-.center-form {
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 30px;
+  }
 }
