@@ -1,46 +1,39 @@
-const form = document.getElementById("contactForm");
-const msg = document.getElementById("formMsg");
+document.addEventListener("DOMContentLoaded", () => {
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  msg.innerText = "Submitting...";
+  // Typed Text
+  const words = ["Business Growth", "Success", "Innovation"];
+  let i = 0, j = 0, current = "";
+  setInterval(() => {
+    current = words[i].slice(0, j++);
+    document.getElementById("typed").innerText = current;
+    if (j > words[i].length) {
+      j = 0; i = (i + 1) % words.length;
+    }
+  }, 150);
 
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    service: form.service.value,
-    message: form.message.value
-  };
+  // Contact Form
+  const form = document.getElementById("contactForm");
+  const msg = document.getElementById("formMsg");
 
-  fetch("https://script.google.com/macros/s/AKfycby2HHqO-Ih4rLJe9ZhHK5RCQI-QJiB4wsCYOL_c0yWYWoSnUGkHSnmsJgkyGsYC24RHyQ/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(data)
-  })
-    .then(() => {
-      msg.innerText =
-        "Thank you for contacting us. We will connect you shortly.";
+  const scriptURL = "https://script.google.com/macros/s/AKfycby2HHqO-Ih4rLJe9ZhHK5RCQI-QJiB4wsCYOL_c0yWYWoSnUGkHSnmsJgkyGsYC24RHyQ/exec";
+
+  form.addEventListener("submit", e => {
+    e.preventDefault(); // 🔥 stops page jump
+
+    msg.innerText = "Submitting...";
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => {
+      msg.innerText = "✅ Thank you! We will contact you shortly.";
       form.reset();
-      setTimeout(() => (msg.innerText = ""), 5000);
+      setTimeout(()=>msg.innerText="",5000);
     })
     .catch(() => {
-      msg.innerText =
-        "Something went wrong. Please try again.";
-      setTimeout(() => (msg.innerText = ""), 5000);
+      msg.innerText = "❌ Submission failed. Try again.";
     });
+  });
+
 });
-
-// AUTO SELECT SERVICE FROM URL
-const params = new URLSearchParams(window.location.search);
-const serviceFromURL = params.get("service");
-
-if (serviceFromURL) {
-  const serviceDropdown = document.querySelector("select[name='service']");
-  if (serviceDropdown) {
-    serviceDropdown.value = serviceFromURL;
-  }
-}
-
