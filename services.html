@@ -15,7 +15,7 @@
     <a href="index.html">Home</a>
     <a href="index.html#about">About</a>
     <a href="services.html">Services</a>
-    <a href="#contact">Get in Touch</a>
+    <a href="index.html#contact">Get in Touch</a>
   </div>
 </nav>
 
@@ -27,9 +27,10 @@
 
 <!-- SVG WAVE -->
 <div class="wave">
-<svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-  <path fill="#f5f7fb" d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,85.3C672,96,768,96,864,90.7C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/>
-</svg>
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill="#f5f7fb"
+      d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,85.3C672,96,768,96,864,90.7C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,0L0,0Z"/>
+  </svg>
 </div>
 
 <!-- SERVICES -->
@@ -51,7 +52,7 @@
         <li>Bulk & Project Hiring</li>
         <li>Payroll Compliance</li>
       </ul>
-      <a href="staffing.html?service=Staffing" class="service-btn">Know More</a>
+      <a href="staffing.html" class="service-btn">Know More</a>
     </div>
 
     <div class="service-card">
@@ -64,7 +65,7 @@
         <li>Cloud Enablement</li>
         <li>System Maintenance</li>
       </ul>
-      <a href="it-solutions.html?service=IT" class="service-btn">Know More</a>
+      <a href="it-solutions.html" class="service-btn">Know More</a>
     </div>
 
     <div class="service-card">
@@ -77,7 +78,7 @@
         <li>Payroll Accounting</li>
         <li>Financial Reporting</li>
       </ul>
-      <a href="accounting.html?service=Accounting" class="service-btn">Know More</a>
+      <a href="accounting.html" class="service-btn">Know More</a>
     </div>
 
     <div class="service-card">
@@ -90,7 +91,7 @@
         <li>Content Strategy</li>
         <li>Brand Campaigns</li>
       </ul>
-      <a href="digital-marketing.html?service=Marketing" class="service-btn">Know More</a>
+      <a href="digital-marketing.html" class="service-btn">Know More</a>
     </div>
 
     <div class="service-card">
@@ -103,7 +104,7 @@
         <li>Leadership Programs</li>
         <li>Process Workshops</li>
       </ul>
-      <a href="learning-development.html?service=LD" class="service-btn">Know More</a>
+      <a href="learning-development.html" class="service-btn">Know More</a>
     </div>
 
   </div>
@@ -142,26 +143,6 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
   </a>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const form = document.getElementById("contactForm");
-  const dropdown = document.getElementById("serviceDropdown");
-  const msg = document.getElementById("formMsg");
-
-  // Auto select service from URL
-  const params = new URLSearchParams(window.location.search);
-  const serviceParam = params.get("service");
-  if (serviceParam) dropdown.value = serviceParam;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // FIX jump issue
-    msg.innerText = "Thank you! We will contact you shortly.";
-    form.reset();
-  });
-});
-</script>
 
 </body>
 </html>
