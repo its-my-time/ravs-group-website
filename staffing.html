@@ -1,349 +1,122 @@
-/* =========================
-   GLOBAL RESET
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Staffing Solutions | RAVS Group</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  background-color: #f5f7fb;
-  color: #1f2933;
-  line-height: 1.6;
-}
+<nav>
+  <div><strong style="color:white;">RAVS Group</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#contact">Get in Touch</a>
+  </div>
+</nav>
 
-/* =========================
-   NAVBAR
-========================= */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #0b2a5b;
-  padding: 14px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+<section class="hero">
+  <h1>Staffing Solutions</h1>
+  <p>Right Talent. Right Time. Right Cost.</p>
+</section>
 
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s;
-}
+<div class="wave">
+<svg viewBox="0 0 1440 320">
+<path fill="#f5f7fb" d="M0,224L1440,96L1440,0L0,0Z"></path>
+</svg>
+</div>
 
-nav a:hover {
-  color: #9dc3ff;
-}
+<section>
+<h2 class="section-title">What We Offer</h2>
+<div class="cards">
+<div class="card">
+<h3>End-to-End Staffing</h3>
+<p>We manage the complete hiring lifecycle from sourcing to onboarding.</p>
+<ul>
+<li>Permanent Staffing</li>
+<li>Contract Staffing</li>
+<li>Third-party Payroll</li>
+<li>Bulk Hiring</li>
+</ul>
+</div>
 
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #ffffff;
-  text-align: center;
-  padding: 120px 20px;
-  position: relative;
-  overflow: hidden;
-}
+<div class="card">
+<h3>Industry Expertise</h3>
+<p>We provide manpower across multiple industries.</p>
+<ul>
+<li>Manufacturing</li>
+<li>Infrastructure</li>
+<li>IT & ITES</li>
+<li>Logistics & Warehousing</li>
+</ul>
+</div>
 
-.hero h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
-}
+<div class="card">
+<h3>Compliance Management</h3>
+<p>Complete statutory and legal compliance handled by experts.</p>
+<ul>
+<li>PF & ESIC</li>
+<li>Labour Laws</li>
+<li>Payroll Processing</li>
+<li>Audit Support</li>
+</ul>
+</div>
+</div>
+</section>
 
-.hero h1 span {
-  color: #ffd700;
-}
+<section class="center-text">
+<a href="index.html#contact" class="know-more-btn">Contact Our Staffing Experts</a>
+</section>
 
-.hero p {
-  font-size: 18px;
-  opacity: 0.95;
-}
+<footer> <!-- SAME FOOTER AS HOME --> </footer>
+<div class="float-btns"> <!-- SAME FLOATING ICONS --> </div>
 
-/* =========================
-   SVG WAVES
-========================= */
-.wave svg {
-  display: block;
-  width: 100%;
-  height: 120px;
-}
+</body>
+</html>
 
-/* =========================
-   SECTIONS
-========================= */
-section {
-  padding: 80px 60px;
-}
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>RAVS Group</h4>
+      <p>Professional business solutions for modern enterprises.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="staffing.html">Staffing Solutions</a><br>
+      <a href="it-solutions.html">IT Solutions</a><br>
+      <a href="accounting.html">Accounting Services</a><br>
+      <a href="digital-marketing.html">Digital Marketing</a><br>
+      <a href="learning-development.html">Learning & Development</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>📞 +91 8126757595</p>
+      <p>✉️ info@ravsgroup.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © RAVS Group. All rights reserved.
+  </div>
+</footer>
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 12px;
-  color: #0b2a5b;
-  text-align: center;
-}
+<div class="float-btns">
+  <a href="https://api.whatsapp.com/send?phone=918126757595" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61555963289834" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+  </a>
+</div>
 
-.section-subtitle {
-  color: #555;
-  margin-bottom: 45px;
-  text-align: center;
-}
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const serviceDropdown = document.querySelector("select[name='service']");
+  if (serviceDropdown) serviceDropdown.value = "Accounting";
+});
+</script>
 
-/* =========================
-   COMMON GRID
-   (HOME + SERVICES + SERVICE PAGES)
-========================= */
-.cards,
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Desktop: 5 in one row */
-  gap: 25px;
-  justify-items: center;   /* 👈 CARD CENTER ALIGN */
-}
-
-/* =========================
-   CARD (UNIVERSAL)
-========================= */
-.card,
-.service-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-  transition: 0.35s;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  max-width: 360px;
-}
-
-.card:hover,
-.service-card:hover {
-  transform: translateY(-8px);
-}
-
-.card h2,
-.card h3,
-.card h4,
-.service-card h2 {
-  margin-bottom: 12px;
-  color: #0b2a5b;
-}
-
-.card p,
-.service-card p {
-  font-size: 15px;
-  color: #444;
-}
-
-.card ul,
-.service-card ul {
-  margin-top: 12px;
-  padding-left: 0;
-  list-style: none;
-}
-
-.card ul li,
-.service-card ul li {
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-/* =========================
-   SERVICE DETAIL PAGE ENHANCEMENT
-========================= */
-.service-detail .service-card {
-  background: linear-gradient(180deg, #ffffff, #f0f4ff);
-  border-top: 5px solid #0b2a5b;
-}
-
-/* =========================
-   MISSION / VISION HIGHLIGHT
-========================= */
-.card-highlight {
-  border-left: 5px solid #ffd700;
-  padding-left: 20px;
-}
-
-/* =========================
-   SERVICE BUTTON (ALWAYS BOTTOM)
-========================= */
-.service-btn,
-.know-more-btn {
-  margin-top: auto;                 /* 👈 KEY FIX */
-  align-self: center;
-  padding: 12px 22px;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #0b2a5b, #123f8a);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.service-btn:hover,
-.know-more-btn:hover {
-  background: linear-gradient(135deg, #123f8a, #0b2a5b);
-  transform: scale(1.05);
-}
-
-/* =========================
-   TESTIMONIALS
-========================= */
-.testimonials .card {
-  background: #eef3ff;
-  font-style: italic;
-}
-
-.testimonials .card h4 {
-  margin-bottom: 6px;
-  color: #0b2a5b;
-  font-style: normal;
-}
-
-/* =========================
-   CONTACT FORM (UNTOUCHED)
-========================= */
-form {
-  max-width: 600px;
-  margin-top: 30px;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-form textarea {
-  min-height: 110px;
-}
-
-form button {
-  background: #0b2a5b;
-  color: #ffffff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #123f8a;
-}
-
-#formMsg {
-  margin-top: 12px;
-  font-size: 14px;
-  color: green;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background: #0b2a5b;
-  color: #ffffff;
-  padding: 45px 60px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.footer-grid h4 {
-  margin-bottom: 12px;
-}
-
-.footer-grid p,
-.footer-grid a {
-  font-size: 14px;
-  color: #ffffff;
-  text-decoration: none;
-  line-height: 1.8;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-/* =========================
-   FLOATING BUTTONS
-========================= */
-.float-btns {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 999;
-}
-
-.float-btns img {
-  width: 46px;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-.float-btns img:hover {
-  transform: scale(1.1);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 1200px) {
-  .cards,
-  .service-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    padding: 14px 25px;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  section {
-    padding: 60px 25px;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .cards,
-  .service-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   HELPERS
-========================= */
-.center-text {
-  text-align: center;
-}
-
-.center-form {
-  margin-left: auto;
-  margin-right: auto;
-}
+</body>
+</html>
