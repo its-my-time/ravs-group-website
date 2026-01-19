@@ -32,3 +32,15 @@ form.addEventListener("submit", function (e) {
       setTimeout(() => (msg.innerText = ""), 5000);
     });
 });
+
+// AUTO SELECT SERVICE FROM URL
+const params = new URLSearchParams(window.location.search);
+const serviceFromURL = params.get("service");
+
+if (serviceFromURL) {
+  const serviceDropdown = document.querySelector("select[name='service']");
+  if (serviceDropdown) {
+    serviceDropdown.value = serviceFromURL;
+  }
+}
+
