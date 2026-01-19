@@ -1,0 +1,286 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f7fb;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b2a5b;
+  padding: 14px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #9dc3ff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  background: linear-gradient(135deg, #0b2a5b, #123f8a);
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: none;
+  background: #ffffff;
+  color: #0b2a5b;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #e6ecff;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  padding: 70px 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #0b2a5b;
+}
+
+.section-subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   CARDS (COMMON)
+========================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3,
+.card h4,
+.card h2 {
+  margin-bottom: 10px;
+  color: #0b2a5b;
+}
+
+.card p {
+  color: #444;
+  font-size: 15px;
+}
+
+.card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   SERVICES CARD LINK
+========================= */
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0b2a5b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TEAM ICON PLACEHOLDER
+========================= */
+.card::before {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: #e6ecff;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+form button {
+  background: #0b2a5b;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #123f8a;
+}
+
+#formMsg {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #0b2a5b;
+  color: #ffffff;
+  padding: 45px 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-grid h4 {
+  margin-bottom: 12px;
+}
+
+.footer-grid p,
+.footer-grid a {
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* =========================
+   FLOATING ACTION BUTTONS
+========================= */
+.float-btns {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+.float-btns a img {
+  width: 46px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.float-btns a img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 25px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 60px 25px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
