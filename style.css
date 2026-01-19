@@ -184,6 +184,9 @@ section {
   background: #f5f7fb;
 }
 
+/* =========================
+   SERVICES PAGE – FIXED & FINAL
+========================= */
 .service-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -199,6 +202,10 @@ section {
   transition: 0.4s;
   position: relative;
   overflow: hidden;
+
+  /* IMPORTANT */
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card::before {
@@ -208,6 +215,9 @@ section {
   background: linear-gradient(135deg, #0b2a5b, #123f8a);
   opacity: 0;
   transition: 0.4s;
+
+  /* 🔥 FIX */
+  pointer-events: none;
 }
 
 .service-card:hover::before {
@@ -243,9 +253,11 @@ section {
   margin-bottom: 6px;
 }
 
-.service-btn,
-.know-more-btn {
-  margin-top: auto; /* MAGIC LINE */
+/* =========================
+   KNOW MORE BUTTON – FINAL FIX
+========================= */
+.service-btn {
+  margin-top: auto;          /* bottom me fix */
   display: inline-block;
   padding: 10px 18px;
   border-radius: 6px;
@@ -254,11 +266,13 @@ section {
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
-  align-self: flex-start;
+
+  position: relative;
+  z-index: 5;                /* 🔥 clickable */
+  cursor: pointer;
 }
 
-.service-btn:hover,
-.know-more-btn:hover {
+.service-btn:hover {
   background: linear-gradient(135deg, #123f8a, #0b2a5b);
   transform: translateY(-2px);
 }
