@@ -633,29 +633,3 @@ nav .logo {
     padding: 10px 20px;
   }
 }
-
-/* =========================
-   ACTIVE MENU HIGHLIGHT
-========================= */
-#navLinks a.active {
-  color: #ffd700;              /* golden highlight */
-  font-weight: 600;
-  position: relative;
-}
-
-#navLinks a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: #ffd700;
-}
-
-/* Mobile menu ke liye thoda spacing fix */
-@media (max-width: 768px) {
-  #navLinks a.active::after {
-    bottom: 4px;
-  }
-}
