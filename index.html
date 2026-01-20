@@ -259,5 +259,23 @@
 </div>
 
 <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".testimonial-slider", {
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  slidesPerView: 1,
+  spaceBetween: 30,
+});
+</script>
+
 </body>
 </html>
