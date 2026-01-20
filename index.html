@@ -277,8 +277,17 @@ new Swiper(".testimonial-slider", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  slidesPerView: 1,
+
   spaceBetween: 30,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,   // mobile
+    },
+    768: {
+      slidesPerView: 2,   // desktop = 2 cards per slide
+    }
+  }
 });
 </script>
 
