@@ -337,19 +337,5 @@ hamburger.addEventListener("click", () => {
 });
 </script>
   
-<script>
-// Active menu highlight
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
-const menuLinks = document.querySelectorAll("#navLinks a");
-
-menuLinks.forEach(link => {
-  const linkPage = link.getAttribute("href");
-
-  if (linkPage === currentPage || (currentPage === "index.html" && linkPage.startsWith("#"))) {
-    link.classList.add("active");
-  }
-});
-</script>
-  
 </body>
 </html>
