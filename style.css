@@ -561,3 +561,75 @@ footer {
     min-width: 260px;
   }
 }
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 50px;
+  background: #0b2a5b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#navLinks {
+  display: flex;
+  gap: 25px;
+}
+
+#navLinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+#navLinks a:hover {
+  color: #9dc3ff;
+}
+
+/* Hamburger icon */
+#hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  #navLinks {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #0b2a5b;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 15px 0;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  #navLinks.show {
+    display: flex;
+  }
+
+  #navLinks a {
+    padding: 10px 20px;
+  }
+}
