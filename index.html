@@ -327,5 +327,15 @@ new Swiper(".testimonial-slider", {
 });
 </script>
 
+<script>
+// Hamburger toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+</script>
+  
 </body>
 </html>
