@@ -44,23 +44,26 @@ nav a:hover {
    HERO SECTION
 ========================= */
 .hero {
-  background: linear-gradient(rgba(11,42,91,0.75), rgba(11,42,91,0.75)),
-  url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover;
+  background: linear-gradient(135deg, #0b2a5b, #123f8a);
   color: #ffffff;
-  text-align: left;
-  padding: 140px 10%;
+  text-align: center;
+  padding: 120px 20px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 44px;
   margin-bottom: 15px;
-  max-width: 600px;
+}
+
+.hero h1 span {
+  color: #ffd700;
 }
 
 .hero p {
   font-size: 18px;
-  max-width: 500px;
+  opacity: 0.95;
 }
 
 .hero button {
@@ -68,11 +71,15 @@ nav a:hover {
   padding: 14px 34px;
   border-radius: 30px;
   border: none;
-  background: #ffd700;
+  background: #ffffff;
   color: #0b2a5b;
   font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #e6ecff;
 }
 
 /* =========================
@@ -733,4 +740,3 @@ nav .logo {
     grid-template-columns: 1fr;
   }
 }
-
